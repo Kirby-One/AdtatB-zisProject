@@ -15,51 +15,13 @@
     </ul>
 
   
- <h1>Táblákban alkalmazható korlátozások bemutatása</h1>
-  <h2>PRIMARY KEY</h2>
-  <p>A PRIMARY KEY korlátozás egyedi azonosítóként szolgál egy táblában, és nem engedélyezi a NULL értékeket.</p>
-  <pre>CREATE TABLE tabla_neve (
-    id INT PRIMARY KEY,
-    nev VARCHAR(50)
-);</pre>
-
-  <h2>FOREIGN KEY</h2>
-  <p>A FOREIGN KEY korlátozás egy táblában egy másik tábla oszlopára hivatkozik, és biztosítja az adatok integritását.</p>
-  <pre>CREATE TABLE tabla_neve (
-    id INT PRIMARY KEY,
-    nev VARCHAR(50),
-    masik_id INT,
-    FOREIGN KEY (masik_id) REFERENCES masik_tabla(id)
-);</pre>
-
-  <h2>UNIQUE</h2>
-  <p>A UNIQUE korlátozás biztosítja, hogy egy oszlopban szereplő értékek egyediek legyenek.</p>
-  <pre>CREATE TABLE tabla_neve (
-    id INT PRIMARY KEY,
-    nev VARCHAR(50) UNIQUE
-);</pre>
-
-  <h2>NOT NULL</h2>
-  <p>A NOT NULL korlátozás megköveteli, hogy egy oszlopban ne lehessen NULL érték.</p>
-  <pre>CREATE TABLE tabla_neve (
-    id INT PRIMARY KEY,
-    nev VARCHAR(50) NOT NULL
-);</pre>
-
-  <h2>DEFAULT</h2>
-  <p>A DEFAULT korlátozás megad egy alapértelmezett értéket egy oszlop számára, ha nem adunk meg értéket az adatbevitel során.</p>
-  <pre>CREATE TABLE tabla_neve (
-    id INT PRIMARY KEY,
-    nev VARCHAR(50) DEFAULT 'N/A'
-);</pre>
-
-  <h2>CHECK</h2>
-  <p>A CHECK korlátozás megad egy feltételt, amelyet az oszlop értékeinek teljesíteniük kell.</p>
-  <pre>CREATE TABLE tabla_neve (
-    id INT PRIMARY KEY,
-    nev VARCHAR(50),
-    kor INT CHECK (kor >= 0)
-);</pre>
+Korlátozás,Leírás,Pelda (szintaxis)
+ELSŐDLEGES KULCS,"Egyedi azonosító. Nem lehet üres ( NULL), és nem ismétlődhet.",id INT PRIMARY KEY
+Idegen kulcs,"Capsolat egy másik tablával. Biztosítja, hogy a hivatkozott adat létezzen.",FOREIGN KEY (id) REFERENCES masik(id)
+NEM NULL,Kötelező kitölteni; az oszlop nem maradhat üresen.,nev VARCHAR(50) NOT NULL
+EGYEDÜLÁLLÓ,Minden értéknek különbözőnek kell lennie az oszlopban.,email VARCHAR(100) UNIQUE
+ALAPÉRTELMEZETT,"Alapértelmezett értéket ad, ha a felhasználó nem ad meg semmit.",statusz VARCHAR(10) DEFAULT 'aktív'
+ELLENŐRZÉS,Logikai feltételhez köti az adatbevitelt (pl. minimum érték).,kor INT CHECK (kor >= 0)
 
 
     
