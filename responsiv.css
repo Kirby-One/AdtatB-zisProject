@@ -3,7 +3,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333333;
+  background-color: darkslateblue;
 }
 
 ul li {
@@ -26,7 +26,41 @@ ul li a:hover {
 body{
   background-color: black;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white;
 }
+
+table {
+  margin: 0 auto 0 auto;
+  width: 70%;
+  border-collapse: collapse;
+  align-items: center;
+  background-color: darkslateblue;
+}
+td{
+  border: 1px solid white;
+  padding: 8px;
+  text-align: left;
+}
+
+#Lekérdezés{
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 576px) {
     body {

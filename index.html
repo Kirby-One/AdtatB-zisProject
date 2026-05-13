@@ -8,12 +8,35 @@
 </head>
 <body>
     <ul>
-      <li><a href="default.asp">Home</a></li>
-      <li><a href="news.asp">News</a></li>
-      <li><a href="contact.asp">Contact</a></li>
+      <li><a href="default.asp">Adatbázis Bemutatása</a></li>
+      <li><a href="#Lekérdezés">Lekérdezés típusai</a></li>
+      <li><a href="#Korlatozások">Korlatozások</a></li>
       <li><a href="about.asp">About</a></li>
     </ul>
-
+    <h2 id="Korlatozások">Korlatozások</h2>
+    <h2 id="Lekérdezés">SQL lekérdezés típusok</h2>
+    <table>
+        <tr>
+            <td>Insert</td>
+            <td>Az INSERT parancs segítségével új adatokat adhatunk hozzá egy táblához.</td>
+            <td><pre>INSERT INTO tabla_neve (oszlop1, oszlop2) VALUES (ertek1, ertek2);</pre></td>
+        </tr>
+        <tr>
+            <td>Select</td>
+            <td>Az SELECT parancs segítségével lekérdezhetjük az adatokat egy táblából.</td>
+            <td><pre>SELECT * FROM tabla_neve;</pre></td>
+        </tr>
+        <tr>
+            <td>Update</td>
+            <td>Az UPDATE parancs segítségével módosíthatjuk az existáló adatokat egy táblában.</td>
+            <td><pre>UPDATE tabla_neve SET oszlop1 = ertek1 WHERE feltetel;</pre></td>
+        </tr>
+        <tr>
+            <td>Delete</td>
+            <td>Az DELETE parancs segítségével törölhetjük az adatokat egy táblából.</td>
+            <td><pre>DELETE FROM tabla_neve WHERE feltetel;</pre></td>
+        </tr>
+    </table>
 
 
     
