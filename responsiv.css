@@ -30,7 +30,7 @@ body{
 
 @media (max-width: 576px) {
     body {
-        background-color: #f0f0f0;
+        background-color: gray;
     }
     .container {
         padding: 10px;
@@ -41,9 +41,9 @@ body{
 }
 
 
-@media (max-width: 768px) {
+@media (min-width: 577px) and (max-width: 768px) {
     body {
-        background-color: #e0e0e0;
+        background-color: rgb(100, 99, 99);
     }
     .container {
         padding: 20px;
@@ -54,9 +54,9 @@ body{
 }
 
 
-@media (min-width: 1024px) {
+@media (min-width: 769px) {
     body {
-        background-color: #d0d0d0;
+        background-color: rgb(94, 91, 91);
     }
     .container {
         padding: 30px;
