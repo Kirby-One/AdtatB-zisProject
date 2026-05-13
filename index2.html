@@ -4,29 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css2.css">
+    <link rel="stylesheet" href="responsiv.css">
 </head>
 <body>
+      <ul>
+      <li><a href="default.asp">Adatbázis Bemutatása</a></li>
+      <li><a href="#Lekérdezés">Lekérdezés típusai</a></li>
+      <li><a href="#Korlatozások">Korlatozások</a></li>
+      <li><a href="about.asp">About</a><img src="logo.png" alt="Logo"></li>
+    </ul>
+
+  
+ <h1>Táblákban alkalmazható korlátozások bemutatása</h1>
+  <h2>PRIMARY KEY</h2>
+  <p>A PRIMARY KEY korlátozás egyedi azonosítóként szolgál egy táblában, és nem engedélyezi a NULL értékeket.</p>
+  <pre>CREATE TABLE tabla_neve (
+    id INT PRIMARY KEY,
+    nev VARCHAR(50)
+);</pre>
+
+  <h2>FOREIGN KEY</h2>
+  <p>A FOREIGN KEY korlátozás egy táblában egy másik tábla oszlopára hivatkozik, és biztosítja az adatok integritását.</p>
+  <pre>CREATE TABLE tabla_neve (
+    id INT PRIMARY KEY,
+    nev VARCHAR(50),
+    masik_id INT,
+    FOREIGN KEY (masik_id) REFERENCES masik_tabla(id)
+);</pre>
+
+  <h2>UNIQUE</h2>
+  <p>A UNIQUE korlátozás biztosítja, hogy egy oszlopban szereplő értékek egyediek legyenek.</p>
+  <pre>CREATE TABLE tabla_neve (
+    id INT PRIMARY KEY,
+    nev VARCHAR(50) UNIQUE
+);</pre>
+
+  <h2>NOT NULL</h2>
+  <p>A NOT NULL korlátozás megköveteli, hogy egy oszlopban ne lehessen NULL érték.</p>
+  <pre>CREATE TABLE tabla_neve (
+    id INT PRIMARY KEY,
+    nev VARCHAR(50) NOT NULL
+);</pre>
+
+  <h2>DEFAULT</h2>
+  <p>A DEFAULT korlátozás megad egy alapértelmezett értéket egy oszlop számára, ha nem adunk meg értéket az adatbevitel során.</p>
+  <pre>CREATE TABLE tabla_neve (
+    id INT PRIMARY KEY,
+    nev VARCHAR(50) DEFAULT 'N/A'
+);</pre>
+
+  <h2>CHECK</h2>
+  <p>A CHECK korlátozás megad egy feltételt, amelyet az oszlop értékeinek teljesíteniük kell.</p>
+  <pre>CREATE TABLE tabla_neve (
+    id INT PRIMARY KEY,
+    nev VARCHAR(50),
+    kor INT CHECK (kor >= 0)
+);</pre>
+
+
     
-<h1>Adatbázis műveletek</h1>
-<h2>Adatbevitel (INSERT)</h2>
-<p>Az INSERT parancs segítségével új adatokat adhatunk hozzá egy táblához.</p>
-<pre>INSERT INTO tabla_neve (oszlop1, oszlop2) VALUES (ertek1, ertek2);</pre>
-
-<h2>Adatlekérdezés (SELECT)</h2>
-<p>A SELECT parancs segítségével lekérdezhetjük az adatokat egy vagy több táblából.</p>
-<pre>SELECT oszlop1, oszlop2 FROM tabla_neve WHERE feltetel;</pre>
-
-<h2>Adatmódosítás (UPDATE)</h2>
-<p>Az UPDATE parancs segítségével módosíthatjuk a meglévő adatokat egy táblában.</p>
-<pre>UPDATE tabla_neve SET oszlop1 = ertek1 WHERE feltetel;</pre>
-
-<h2>Adattörlés (DELETE)</h2>
-<p>A DELETE parancs segítségével törölhetjük a meglévő adatokat egy táblából.</p>
-<pre>DELETE FROM tabla_neve WHERE feltetel;</pre>
-
-
-
-
 </body>
 </html>
