@@ -5,7 +5,9 @@ ul {
   overflow: hidden;
   background-color: darkslateblue;
 }
-
+button{
+  background-color: darkslateblue;
+}
 ul li {
   float: left;
 }
@@ -19,12 +21,12 @@ ul li a {
 }
 
 ul li a:hover {
-  background-color: #111111;
+  background-color: rgb(110, 24, 108);
 }
 
 
 body{
-  background-color: black;
+  background-color: #1B263B;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: white;
 }
@@ -42,10 +44,39 @@ td{
   text-align: left;
 }
 
-#Lekérdezés{
+th{
+  border: 1px solid white;
+  padding: 8px;
   text-align: center;
 }
+h2{
+  text-align: center;
+  margin-top: 30px;
+}
 
+.kep-kontener {
+  width: 500px; 
+  overflow: hidden; 
+  border-radius: 8px;
+  margin: 10px auto 0 auto;
+
+}
+
+.zoom-kep {
+  width: 100%;
+  transition: transform 0.5s ease; 
+}
+
+.zoom-kep:hover {
+  transform: scale(1.5); 
+  cursor: zoom-in;
+}
+
+div{
+  margin: 20px;
+  background-color: slateblue;
+  padding: 15px;
+}
 
 
 
@@ -64,39 +95,45 @@ td{
 
 @media (max-width: 576px) {
     body {
-        background-color: gray;
+        background-color: #3911c9c7;
     }
-    .container {
+    
+    ul li {
+        float: none;
+        display: block;
+    }
+    
+    table {
+        width: 100%;
+    }
+    
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    
+    tr {
+        margin-bottom: 15px;
+    }
+    
+    th, td {
+        text-align: left;
         padding: 10px;
     }
-    .header, .footer {
-        text-align: center;
-    }
+
 }
 
 
 @media (min-width: 577px) and (max-width: 768px) {
     body {
-        background-color: rgb(100, 99, 99);
+         background-color: #3911c970;
     }
-    .container {
-        padding: 20px;
-    }
-    .header, .footer {
-        text-align: left;
-    }
+
 }
 
 
 @media (min-width: 769px) {
     body {
-        background-color: rgb(94, 91, 91);
-    }
-    .container {
-        padding: 30px;
-    }
-    .header, .footer {
-        text-align: left;
+        background-color: #3911c9a8;
     }
 }
 

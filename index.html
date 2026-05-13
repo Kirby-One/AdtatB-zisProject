@@ -8,11 +8,12 @@
 </head>
 <body>
     <ul>
-      <li><a href="default.asp">Adatbázis Bemutatása</a></li>
+      <li><a href="">Adatbázis Bemutatása</a></li>
       <li><a href="#Lekérdezés">Lekérdezés típusai</a></li>
-      <li><a href="index2.html">Korlatozások</a></li>
-      <li><a href="about.asp">About</a></li>
+      <li><a href="#Korlatozások">Korlatozások</a></li>
+      <li><a href="teszt.sql" download="teszt.sql" class="download-btn">A letöltéshez katt ide</a></li>
     </ul>
+    <div>
     <h2 id="Lekérdezés">SQL lekérdezés típusok</h2>
     <table>
         <tr>
@@ -36,8 +37,48 @@
             <td><pre>DELETE FROM tabla_neve WHERE feltetel;</pre></td>
         </tr>
     </table>
-
-
+    <h2 id="Korlatozások">SQL korlátozások</h2>
+    <table>
+      <tr>
+        <th>Korlátozás</th>
+        <th>Leírás</th>
+        <th>Pelda (szintaxis)</th>
+      </tr>
+      <tr>
+        <td>ELSŐDLEGES KULCS</td>
+        <td>Egyedi azonosító. Nem lehet üres ( NULL), és nem ismétlődhet.</td>
+        <td>id INT PRIMARY KEY</td>
+      </tr>
+      <tr>
+        <td>Idegen kulcs</td>
+        <td>Capsolat egy másik tablával. Biztosítja, hogy a hivatkozott adat létezzen.</td>
+        <td>FOREIGN KEY (id) REFERENCES masik(id)</td>
+      </tr>
+      <tr>
+        <td>NEM NULL</td>
+        <td>Kötelező kitölteni; az oszlop nem maradhat üresen.</td>
+        <td>nev VARCHAR(50) NOT NULL</td>
+      </tr>
+      <tr>
+        <td>EGYEDÜLÁLLÓ</td>
+        <td>Minden értéknek különbözőnek kell lennie az oszlopban.</td>
+        <td>email VARCHAR(100) UNIQUE</td>
+      </tr>
+      <tr>
+        <td>ALAPÉRTELMEZETT</td>
+        <td>Alapértelmezett értéket ad, ha a felhasználó nem ad meg semmit.</td>
+        <td>statusz VARCHAR(10) DEFAULT 'aktív'</td>
+      </tr>
+      <tr>
+        <td>ELLENŐRZÉS</td>
+        <td>Logikai feltételhez köti az adatbevitelt (pl. minimum érték).</td>
+        <td>kor INT CHECK (kor >= 0)</td>
+      </tr>
+    </table>
+    </div>
+    <div class="kep-kontener">
+      <img src="aikep.png" alt="AI kép" class="zoom-kep">
+    </div>
     
 </body>
 </html>
